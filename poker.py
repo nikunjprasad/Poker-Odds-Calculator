@@ -288,8 +288,8 @@ deck=[]
 for r in values.keys():
     for s in suit:
         deck.append(r+s)
-hand1=['Jh','4c']
-hand2=['Qc','Td']
+hand1=['Jh','Ac']
+hand2=['Ks','9c']
 deck.remove(hand1[0])
 deck.remove(hand1[1])
 deck.remove(hand2[0])
@@ -386,3 +386,9 @@ print "Hand2= ",hand2
 print "Winning percentage of ",hand1,":-",(winsofhand1+0.0)*100/s
 print "Winning percentage of ",hand2,":-",(winsofhand2+0.0)*100/s
 print "split",(split+0.0)*100/s
+if winsofhand1>winsofhand2:
+    print "Winning Hand",get_best_hand(flop+turn+river,hand1)
+elif winsofhand1<winsofhand2:
+    print "Winning Hand",get_best_hand(flop+turn+river,hand2)
+else:
+    print "Split", get_best_hand(flop+turn+river,hand1)
